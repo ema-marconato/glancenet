@@ -9,7 +9,6 @@ outputs
 train_outputs
 test_outputs
 .idea
-scripts
 *.sh
 **/saved
 requirements.txt

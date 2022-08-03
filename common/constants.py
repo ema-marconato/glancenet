@@ -20,6 +20,8 @@ DIPVAEI = 'DIPVAEI'
 DIPVAEII = 'DIPVAEII'
 BetaTCVAE = 'BetaTCVAE'
 INFOVAE = 'InfoVAE'
+GlanceNet = 'glancenet'
+CBNM = 'cbnm'
 GRAYVAE = "grayvae"
 GRAYVAE_STANDARD = 'grayvae_standard'
 GRAYVAE_JOIN = 'grayvae_join'
@@ -32,7 +34,7 @@ TOTAL_VAE_EPOCH = 'total_vae_epoch'
 LEARNING_RATE = 'learning_rate'
 
 # Algorithms
-ALGS = ('AE', 'VAE', 'BetaVAE', 'CVAE', 'IFCVAE', "GRAYVAE", 'GrayVAE_Standard', 'GrayVAE_Join', 'CBM_Seq', 'CBM_Join')
+ALGS = ('AE', 'VAE', 'BetaVAE', 'CVAE', 'IFCVAE', "GRAYVAE", 'GrayVAE_Standard', 'GrayVAE_Join', 'CBM_Seq', 'CBM_Join', 'GlanceNet', 'CBNM')
 LOSS_TERMS = (FACTORVAE, DIPVAEI, DIPVAEII, BetaTCVAE, INFOVAE, GRAYVAE, GRAYVAE_STANDARD, GRAYVAE_JOIN, CBM_SEQ, CBM_JOIN) #uncertain here
 
 # Datasets
