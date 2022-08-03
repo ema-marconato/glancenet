@@ -67,7 +67,7 @@ class BaseDisentangler(object):
         self.image_size = args.image_size
         self.aicrowd_challenge = args.aicrowd_challenge
 
-        #EMANUELE
+        #EM
         self.out_path = args.out_path
         self.validation_scores = {}
 

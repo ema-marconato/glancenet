@@ -1,5 +1,5 @@
 ##############################################################################
-## Update 11/04/2022, Emanuele Marconato (emanuele.marconato@phd.unipi.it)
+## Update 11/04/2022, 
 ##
 ## CREDITS: check existing code at https://github.com/AmanDaVinci/SENN.
 ##############################################################################

@@ -1,17 +1,6 @@
 
 # GlanceNets: Interpretabile, Leak-proof Concept-based Models
-Code implementiation for the homonymous paper. The article can be found at https://arxiv.org/abs/2205.15612 and consider citing it if useful:
-
-@misc{https://doi.org/10.48550/arxiv.2205.15612,
-  doi = {10.48550/ARXIV.2205.15612},
-  url = {https://arxiv.org/abs/2205.15612},
-  author = {Marconato, Emanuele and Passerini, Andrea and Teso, Stefano},
-  keywords = {Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {GlanceNets: Interpretabile, Leak-proof Concept-based Models},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
-}
+Code implementiation for the homonymous paper. 
 
 This repo was created upon orginal work on **disentanglement-pytorch**, please consider citing also the original library (https://github.com/amir-abdi/disentanglement-pytorch).
    
@@ -108,7 +97,5 @@ Visualization and code implementations are present inside some jupyter notebooks
 
 
 ### Contributions
-Any contributions, suggestions or questions are welcome. Feel free to submit bugs, feature requests, or questions as issues, or contact me directly via email at: [emanuele.marconato@unitn.it](mailto:emanuele.marconato@unitn.it) 
-
-The original implementation can be found at https://github.com/amir-abdi/disentanglement-pytorch 
+Any contributions, suggestions or questions are welcome. Feel free to submit bugs, feature requests, or questions as issues, or contact me directly via email at:  
 

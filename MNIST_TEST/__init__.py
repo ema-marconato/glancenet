@@ -1,5 +1,5 @@
 #####################################################################################################
-###     Copyright: Emanuele Marconato - emanuele.marconato@phd.unipi.it - github: soen-master
+###     Copyright: 
 ###
 ###     INFORMATION LEAKAGE TEST based on https://arxiv.org/abs/2106.13314   
 ###     
