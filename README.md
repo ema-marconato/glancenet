@@ -1,5 +1,5 @@
 
-# GlanceNets: Interpretabile, Leak-proof Concept-based Models
+# GlanceNets: Interpretable, Leak-proof Concept-based Models
 Code implementiation for the homonymous paper. 
 
 This repo was created upon orginal work on **disentanglement-pytorch**, please consider citing also the original library (https://github.com/amir-abdi/disentanglement-pytorch).
