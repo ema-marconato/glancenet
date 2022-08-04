@@ -1,5 +1,5 @@
 
-# GlanceNets: Interpretabile, Leak-proof Concept-based Models
+# GlanceNets: Interpretable, Leak-proof Concept-based Models
 Code implementiation for the homonymous paper. 
 
 This repo was created upon orginal work on **disentanglement-pytorch**, please consider citing also the original library (https://github.com/amir-abdi/disentanglement-pytorch).
@@ -58,12 +58,12 @@ or to reproduce experiments:
   
     
 #### 1) Important Flags
-- `--alg`: The model for training.  ***Values**:  GrayVAE_Join, CBM_Join* 
+- `--alg`: The model for training.  ***Values**:  GlanceNet, CBNM* 
 - `--masking_fact`: Selects the percentage of supervised training examples possessing latent factors information. It is a float variable in the interval [0,100]. 
 - `--conditional_prior`: Choose between the GlanceNet conditional prior (True) and the unconditional one (False).  The conditional prior requires class labels. ***Values**: True, False.* 
 
 - `--loss_terms`: Extensions to the VAE algorithm  are implemented as plug-ins to the original formulation.  As a result, if the loss terms of two learning algorithms (*e.g.*, A and B)  were found to be compatible, they can simultaneously be included in the objective function with the flag set as:
-		 `--loss_terms A B`.  The `loss_terms` flag can be used only with GRAYVAE algorithm. \
+		 `--loss_terms A B`.  The `loss_terms` flag can be used only with GlanceNet algorithm. \
    ***Values**:  DIPVAEI, DIPVAEII, BetaTCVAE, INFOVAE, and FACTORVAE (not available for now)*.
     
 - `--evaluation_metric`: Metric(s) to use for disentanglement evaluation (see `scripts/aicrowd_challenge`). \
@@ -82,7 +82,8 @@ The current implementation allows to choose where to save the model checkpoints 
 #### 4) Replicate the experiments
 The folder scripts contains various sh configurations to replicate our paper experiments. In particular, GlanceNet and CBNM training pipelines can be found for *dSprites, mpi3D_toy* and *CelebA*. One can vary `--seed` and `--masking_fact`  flags to choose between different scenarios.   Be sure to select the correct environment (default name `dis`). Also, the script `leakage_dsprites.sh` contains the specifications to test leakage on either *GlanceNet, CBNM, and VAE*.
 
-On the other hand, it is sufficient to run `MNIST_TEST/parity_test.py` to replicate *MNIST* leakage test. Be sure to select the correct environment (default name `mnist_test`).
+#### 5) Leakage Experiments
+It is sufficient to run `MNIST_TEST/parity_test.py` to replicate *MNIST* leakage test, then run the notebook `leakage/MNIST_leakage.ipynb`. Be sure to select the correct environment (default name `mnist_test`). The same procedure applies to the dSprites leakage test: run the script `scripts/leakage_dsprites.sh` and follow the analysis in `leakage/dSprites_leakage.ipynb`. Please, make sure to preprocess dSprites dataset and create the partition.
 
 
 ### Evaluate the performances
@@ -91,10 +92,12 @@ Evaluation of performances is done post training, from saved .csv and .npy files
 - **Accuracy:** The model accuracy is evaluated with sklearn.metrics from  `log_name/eval_results/downstream_obtained.npy`;
 
 - **Alignment:** The model alignmnent is evaluated with the aid of `disentanglement_lib` for dSprites and MPI3D, and it is contained in `log_name/eval_results/dis_metrics.csv`. For CelebA, the performances are calclulated from `log_name/eval_results/latents_obtained.npy`;  
+
 - **Explicitness:** Similarly, for CelebA the performances are calclulated from `log_name/eval_results/latents_obtained.npy`. Explicitness for dSprites and MPI3D can be found into the `dci/.../evaluation_result.json` from the saved checkpoint.
 
 Visualization and code implementations are present inside some jupyter notebooks in the folder `analysis/`.
 
+- **Concept Leakage:** The evaluation can be found in the folder `leakage/`.
 
 ### Contributions
 Any contributions, suggestions or questions are welcome. Feel free to submit bugs, feature requests, or questions as issues, or contact me directly via email at:  
