@@ -15,3 +15,5 @@ requirements.txt
 dsprites_GRAYVAE.sh
 grayvae_error.e
 cbm_error.e
+/data
+__pycache__

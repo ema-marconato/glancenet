@@ -157,7 +157,7 @@ def get_args(sys_args):
     parser.add_argument('--show_loss', default=500, type=float, help='Choose iter when to show behaviour of the model')
 
     # Methodology on Latents
-    parser.add_argument('--latent_loss', default='MSE', type=str, choices=['BCE', 'MSE', '1st_BCE', '1st_MSE', 'exact_MSE', 'exact_BCE', 'Hybrid', 'None'], help='Select the error function on the latent variables')
+    parser.add_argument('--latent_loss', default='BCE', type=str, choices=['BCE', 'MSE', '1st_BCE', '1st_MSE', 'exact_MSE', 'exact_BCE', 'Hybrid', 'None'], help='Select the error function on the latent variables')
     parser.add_argument('--latent_weight', default=None, type=float, help='Constant increasing the importance of latent matching.')
     parser.add_argument('--masking_fact', default=100, type=float, help='Percent of generative factors seen.')
 
