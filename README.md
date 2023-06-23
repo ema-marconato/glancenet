@@ -17,8 +17,8 @@ Also, multiple loss terms can be included in the `--loss_terms` argument, each w
 
 ### Requirements and Installation
 
-Install the requirements: `pip install -r requirements.txt` \
-Or build conda environment: `conda env create -f environment.yml`
+First build conda environment: `conda env create -f environment.yml`
+and check that all requirements are installed: `pip install -r requirements.txt` \
 
 The library visualizes the ***reconstructed images*** and the ***traversed latent spaces*** and saves them as static frames as well as animated GIFs. It also extensively uses the web-based Weights & Biases toolkit for logging and visualization purposes.
 
