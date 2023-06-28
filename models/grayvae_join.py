@@ -7,7 +7,7 @@ from models.vae import VAE
 from models.vae import VAEModel
 from architectures import encoders, decoders
 from common.ops import reparametrize
-from common.utils import Accuracy_Loss, Interpretability
+from common.utils import Accuracy_Loss
 from common import constants as c
 import torch.nn.functional as F
 from common.utils import is_time_for
@@ -96,7 +96,7 @@ class GrayVAE_Join(VAE):
         self.dataframe_dis = pd.DataFrame() #columns=self.evaluation_metric)
         self.dataframe_eval = pd.DataFrame()
         self.validation_scores = pd.DataFrame()
-## OSR MECHANISM
+        ## OSR MECHANISM
         self.zy = torch.zeros(size=(args.n_classes, args.z_dim), device=self.device)
         self.thr_rec = torch.zeros(size=(), device=self.device)
         self.thr_y = torch.zeros(size=(args.n_classes,), device=self.device)

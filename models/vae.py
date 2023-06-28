@@ -113,26 +113,26 @@ class VAE(BaseDisentangler):
 
     def loss_fn(self, input_losses, reduce_rec=False, **kwargs):
         x_recon = kwargs['x_recon']
-        x_true = kwargs['x_true']
-        mu = kwargs['mu']
-        logvar = kwargs['logvar']
-#        prediction z= kwargs["prediction"]
+        x_true  = kwargs['x_true']
+        mu      = kwargs['mu']
+        logvar  = kwargs['logvar']
         
         bs = self.batch_size
         output_losses = dict()
+
+        # Crete total loss
         output_losses[c.TOTAL_VAE] = input_losses.get(c.TOTAL_VAE, 0)
         
+        # Update total loss with RECON
         output_losses[c.RECON] = F.binary_cross_entropy(input=x_recon, target=x_true,reduction='sum') / bs * self.w_recon
-
         output_losses[c.TOTAL_VAE] += output_losses[c.RECON]
 
-        if self.conditional_prior:
-            mu_cluster = kwargs['mu_target'] 
-            output_losses['kld'] = self._kld_loss_fn(mu,logvar, mu_cluster) 
-        else:
-            output_losses['kld'] = self._kld_loss_fn(mu, logvar)
+        # Update total loss with KLD # EVALUATE LOSS WITHOUT CONDITIONAL PRIOR #
+        output_losses['kld'] = self._kld_loss_fn(mu, logvar)
         output_losses[c.TOTAL_VAE] += output_losses['kld']
 
+
+        # OTHER VAE LIKE TERMS 
         if c.FACTORVAE in self.loss_terms:
             from models.factorvae import factorvae_loss_fn
             output_losses['vae_tc_factor'], output_losses['discriminator_tc'] = factorvae_loss_fn(
